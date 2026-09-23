@@ -1,0 +1,17 @@
+{
+  "appName": {
+    "message": "WebsiteStars"
+  },
+  "appDescription": {
+    "message": "Save GitHub projects and technical pages as you browse. Find them locally with keywords, tags, and notes."
+  },
+  "openSidebar": {
+    "message": "Open WebsiteStars sidebar"
+  },
+  "openLibrary": {
+    "message": "Open WebsiteStars library"
+  },
+  "savePage": {
+    "message": "Save current page"
+  }
+}

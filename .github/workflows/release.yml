@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Release checks
+    uses: ./.github/workflows/ci.yml
+    with:
+      release-tag: ${{ github.ref_name }}
+    permissions:
+      contents: read
+
+  publish:
+    name: Publish GitHub Release
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: chrome-extension-${{ github.run_id }}-${{ github.run_attempt }}
+          path: release
+      - name: Verify downloaded assets
+        working-directory: release
+        run: sha256sum --check --strict SHA256SUMS
+      - name: Create release with verified assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            release/websitestars-*-chrome.zip release/SHA256SUMS \
+            --verify-tag \
+            --title "WebsiteStars $RELEASE_TAG" \
+            --generate-notes

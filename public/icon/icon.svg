@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">WebsiteStars</title>
+  <rect width="128" height="128" rx="29" fill="#171717"/>
+  <path fill="#fff" fill-rule="evenodd" d="M38 24h52a6 6 0 0 1 6 6v72a3 3 0 0 1-4.6 2.5L64 87 36.6 104.5A3 3 0 0 1 32 102V30a6 6 0 0 1 6-6ZM64 32l5.7 13.2L84 47.5 73.2 55l3.1 17L64 62.5 51.7 72l3.1-17L44 47.5l14.3-2.3L64 32Z"/>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "appName": {
+    "message": "WebsiteStars"
+  },
+  "appDescription": {
+    "message": "在浏览时收藏 GitHub 项目与技术网页，在本地用关键词、标签和笔记找回。"
+  },
+  "openSidebar": {
+    "message": "打开 WebsiteStars 侧栏"
+  },
+  "openLibrary": {
+    "message": "打开 WebsiteStars 资料库"
+  },
+  "savePage": {
+    "message": "收藏当前页面"
+  }
+}

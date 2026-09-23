@@ -1,0 +1,45 @@
+.markdown-body { min-width: 0; max-width: 100%; color: var(--foreground); white-space: normal; overflow-wrap: anywhere; font-size: 13px; line-height: 1.85; }
+.markdown-body, .markdown-body * { box-sizing: border-box; }
+.markdown-body > :first-child { margin-top: 0; }
+.markdown-body > :last-child { margin-bottom: 0; }
+.markdown-body :is(h1, h2, h3, h4, h5, h6) { margin: 1.3em 0 .55em; color: var(--foreground); font-weight: 650; line-height: 1.4; }
+.markdown-body h1 { font-size: 1.65em; }
+.markdown-body h2 { font-size: 1.45em; }
+.markdown-body h3 { font-size: 1.25em; }
+.markdown-body h4 { font-size: 1.1em; }
+.markdown-body h5 { font-size: 1em; }
+.markdown-body h6 { font-size: .95em; color: var(--muted); }
+.markdown-body p { margin: .7em 0; }
+.markdown-body strong { font-weight: 650; }
+.markdown-body em { font-style: italic; }
+.markdown-body del { text-decoration: line-through; }
+.markdown-body :is(ul, ol) { margin: .7em 0; padding-left: 1.6em; }
+.markdown-body ul { list-style: disc; }
+.markdown-body ol { list-style: decimal; }
+.markdown-body li { margin: .25em 0; }
+.markdown-body li > :is(ul, ol) { margin-block: .25em; }
+.markdown-body .contains-task-list { list-style: none; padding-left: .2em; }
+.markdown-body .task-list-item input { margin-right: .5em; accent-color: var(--accent); }
+.markdown-body blockquote { margin: .9em 0; padding: .15em 0 .15em 1em; border-left: 3px solid var(--border); color: var(--muted); }
+.markdown-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.markdown-body code { padding: .12em .35em; border: 1px solid var(--border); border-radius: 4px; background: var(--surface-secondary); font: .92em/1.7 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.markdown-body pre { display: block; min-width: 0; max-width: 100%; margin: .9em 0; padding: 12px; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); white-space: pre; overflow-wrap: normal; word-break: normal; tab-size: 2; }
+.markdown-body pre code { display: block; width: max-content; min-width: 100%; padding: 0; border: 0; border-radius: 0; background: transparent; font-size: 12px; white-space: inherit; }
+.markdown-table-scroll { min-width: 0; max-width: 100%; margin: .9em 0; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid var(--border); border-radius: 8px; }
+.markdown-body table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 12px; }
+.markdown-body :is(th, td) { min-width: 7em; padding: 8px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+.markdown-body th { background: var(--surface-secondary); font-weight: 600; }
+.markdown-body tr:first-child > th { border-top: 0; }
+.markdown-body tr:last-child > td { border-bottom: 0; }
+.markdown-body tr > :first-child { border-left: 0; }
+.markdown-body tr > :last-child { border-right: 0; }
+.markdown-body hr { margin: 1.3em 0; border: 0; border-top: 1px solid var(--border); }
+.markdown-body :is(pre, .markdown-table-scroll, a, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.markdown-image { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 5px; min-width: 0; max-width: 100%; margin-block: .4em; vertical-align: top; }
+.markdown-image img { display: block; max-width: 100%; height: auto; object-fit: contain; }
+.markdown-image-placeholder { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; max-width: 100%; padding: 8px 10px; border: 1px dashed var(--border); border-radius: 6px; color: var(--muted); }
+.markdown-image button { max-width: 100%; padding: 3px 8px; border: 1px solid var(--border); border-radius: 5px; background: var(--surface); color: var(--foreground); font: inherit; white-space: normal; cursor: pointer; }
+.markdown-image > a { font-size: 11px; }
+.content-text.readme-content { min-width: 0; max-width: 100%; white-space: normal; font-family: inherit; }
+.beautiful-stream-text { display: block; min-width: 0; max-width: 100%; white-space: normal; }
+.beautiful-stream-text > .beautiful-stream-caret { margin-top: 4px; }

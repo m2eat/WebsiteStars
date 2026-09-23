@@ -1,0 +1,22 @@
+.source-index-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; min-width: 0; margin-top: 7px; }
+.source-index-badges > span { max-width: 100%; min-width: 0; height: auto; min-height: 20px; padding-block: 2px; font-size: 10px; line-height: 1.5; white-space: normal; overflow-wrap: anywhere; }
+.index-overview, .item-index-status, .index-confirm { display: flex; flex-direction: column; gap: 12px; min-width: 0; overflow-wrap: anywhere; }
+.index-overview { padding-top: 18px; border-top: 1px solid var(--border); }
+.item-index-status { padding: 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-secondary); }
+.index-section-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.index-section-heading h3 { display: flex; align-items: center; gap: 7px; margin: 0; font-size: 12px; font-weight: 600; }
+.index-section-heading svg { flex-shrink: 0; }
+.index-statistics { display: grid; grid-template-columns: repeat(auto-fit, minmax(75px, 1fr)); gap: 8px; margin: 0; }
+.index-statistics > div { min-width: 0; padding: 9px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); }
+.index-statistics dt { font-size: 10px; color: var(--muted); }
+.index-statistics dd { margin: 3px 0 0; color: var(--foreground); font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.index-item-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.index-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.index-overview .feedback, .item-index-status .inline-error { margin-bottom: 0; }
+.semantic-settings-card .settings-card-body, .semantic-settings-card .app-field { min-width: 0; }
+.semantic-settings-card input { min-width: 0; }
+@media (max-width: 360px) {
+  .index-overview .index-statistics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .item-index-status { padding: 10px; }
+  .index-actions > button { max-width: 100%; height: auto; min-height: 32px; white-space: normal; }
+}

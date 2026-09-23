@@ -1,0 +1,31 @@
+{
+  "description": "Synthetic developer-resource corpus; queries are fixed independently of model results. No personal bookmarks or notes are used.",
+  "documents": [
+    { "id": "browser", "title": "PagePilot", "text": "A browser automation agent that can navigate websites, fill forms, click buttons, and extract structured data from pages.", "language": "Python" },
+    { "id": "terminal", "title": "ConsoleCanvas", "text": "A React renderer for building interactive terminal user interfaces. It supports keyboard input, components and flexbox layout in command-line applications.", "language": "TypeScript" },
+    { "id": "knowledge", "title": "KnowledgeHarbor", "text": "A document knowledge base that ingests PDFs and Markdown, indexes semantic passages, and answers questions using retrieval augmented generation with citations.", "language": "Go" },
+    { "id": "vpn", "title": "PeerPath", "text": "A peer-to-peer mesh VPN connecting remote machines into a private network with encrypted tunnels and centralized access policies.", "language": "Go" },
+    { "id": "database", "title": "EdgePocket", "text": "An embedded SQL database based on SQLite for serverless edge applications. It offers durable relational storage without managing database servers.", "language": "TypeScript" },
+    { "id": "workflow", "title": "TaskLoom", "text": "A visual workflow automation system. Connect triggers, conditions and external APIs to run recurring business processes.", "language": "TypeScript" },
+    { "id": "search", "title": "SearchNest", "text": "A lightweight full-text search engine with typo tolerance, prefix matching and ranking. Designed for indexing text documents locally.", "language": "Rust" },
+    { "id": "monitor", "title": "PulseWatch", "text": "An uptime monitoring dashboard that periodically checks HTTP endpoints and sends notifications when a service becomes unavailable.", "language": "JavaScript" },
+    { "id": "password", "title": "KeyVaultLite", "text": "A self-hosted password manager that encrypts stored credentials and synchronizes the vault between devices.", "language": "Rust" },
+    { "id": "diagram", "title": "FlowSketch", "text": "A drawing tool for architecture diagrams and whiteboards. Export editable nodes, arrows and hand-drawn shapes for team discussions.", "language": "TypeScript" },
+    { "id": "ocr", "title": "PaperLens", "text": "Optical character recognition for scanned documents and screenshots. Extract text from images and preserve table layout for downstream processing.", "language": "Python" },
+    { "id": "proxy", "title": "ModelBridge", "text": "A unified API gateway for multiple large language model providers. Route chat requests, manage API keys and enforce usage quotas.", "language": "Go" }
+  ],
+  "queries": [
+    { "text": "能自己打开网页然后填写表单的工具", "expected": "browser" },
+    { "text": "在命令行里面做那种可以按键操作的界面", "expected": "terminal" },
+    { "text": "把一堆文档放进去就能问答并且告诉我出处", "expected": "knowledge" },
+    { "text": "把家里和公司的电脑连成一个内网", "expected": "vpn" },
+    { "text": "适合边缘函数用的轻量关系型存储", "expected": "database" },
+    { "text": "拖拖拽拽连接接口自动执行业务流程", "expected": "workflow" },
+    { "text": "本地资料搜索，打错字也能找到", "expected": "search" },
+    { "text": "网站挂了的时候自动通知我的那个服务", "expected": "monitor" },
+    { "text": "可以自己部署，集中保存账号密码", "expected": "password" },
+    { "text": "画架构图和白板讨论的工具", "expected": "diagram" },
+    { "text": "从扫描件截图提取文字和表格", "expected": "ocr" },
+    { "text": "把不同大模型接口统一到一个地址管理额度", "expected": "proxy" }
+  ]
+}
