@@ -15,7 +15,7 @@ function fixture(): Item {
 }
 async function openChat(page: Page) { await page.getByRole('group', { name: '浏览模式' }).getByRole('button', { name: '对话查询', exact: true }).click(); }
 
-test('Markdown streams top to bottom, README renders and header icons remain centered', async () => {
+test('Markdown streams top to bottom, README renders and controls fit narrow headers', async () => {
   test.setTimeout(60000);
   let stream: ServerResponse | undefined;
   let writeNext: (() => void) | undefined;
@@ -59,12 +59,12 @@ test('Markdown streams top to bottom, README renders and header icons remain cen
     await options.getByRole('button', { name: '保存设置', exact: true }).click();
     await expect(options.getByText(/设置已保存，对话查询已启用/)).toBeVisible();
     const page = await context.newPage(); await page.goto(`${base}/sidepanel.html`); await page.setViewportSize({ width: 390, height: 844 });
-    const header = page.locator('.library-header');
     for (const width of [280, 390, 760]) {
       await page.setViewportSize({ width, height: 844 });
-      const headerBox = (await header.boundingBox())!;
-      const group = page.getByRole('group', { name: '浏览模式' }); const groupBox = (await group.boundingBox())!;
-      expect(Math.abs(groupBox.x + groupBox.width / 2 - headerBox.x - headerBox.width / 2)).toBeLessThan(2);
+      const group = page.getByRole('group', { name: '浏览模式' });
+      const brandBox = (await page.locator('.library-header .brand').boundingBox())!;
+      const groupBox = (await group.boundingBox())!;
+      expect(brandBox.x + brandBox.width).toBeLessThanOrEqual(groupBox.x);
       await expect(group.getByRole('button', { name: '资料库', exact: true })).toHaveText('');
       await expect(group.getByRole('button', { name: '对话查询', exact: true })).toHaveText('');
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
