@@ -13,6 +13,9 @@
   .library-header .mobile-actions { gap: 0; }
   .library-header .mobile-actions > button { min-width: 28px; width: 28px; }
 }
+@media (max-width: 300px) {
+  .library-header .brand > span { display: none; }
+}
 .library-mode-content { min-width: 0; }
 .library-mode-content[hidden], .chat-mode-content[hidden] { display: none; }
 .chat-mode-content { display: flex; flex: 1; min-height: 0; min-width: 0; overflow: hidden; }

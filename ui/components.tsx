@@ -8,7 +8,7 @@ export function errorMessage(error: unknown) {
 }
 
 export function Brand() {
-  return <div className="brand"><img className="brand-mark" src="/icon/icon.svg" width="30" height="30" alt="" /><span>WebsiteStars</span></div>;
+  return <div className="brand"><img className="brand-mark" src="/icon/icon.svg" width="30" height="30" alt="WebsiteStars" /><span aria-hidden="true">WebsiteStars</span></div>;
 }
 
 export function Spinner({ label = t('正在加载…') }: { label?: string }) {
