@@ -296,6 +296,23 @@ test('opening the sidebar and refreshing never saves a page; explicit capture st
   expect(errors).toEqual([]);
 });
 
+test('modern GitHub repository actions show and save with the WebsiteStars button', async () => {
+  const repo = await context.newPage();
+  await repo.route('https://github.com/starts-fixture/modern', route => route.fulfill({
+    contentType: 'text/html; charset=utf-8',
+    body: '<!doctype html><title>Modern repo</title><div id="repo-title-component"><div itemprop="name"><a href="/starts-fixture/modern">modern</a></div></div><ul data-testid="repo-header-actions" style="display:flex;list-style:none;gap:8px"><li><a data-component="Button" href="/login?return_to=%2Fstarts-fixture%2Fmodern" data-testid="fork-button">Fork</a></li><li><a data-component="Button" href="/login?return_to=%2Fstarts-fixture%2Fmodern" data-testid="star-button"><svg class="octicon octicon-star"></svg>Star</a></li></ul>',
+  }));
+  try {
+    await repo.goto('https://github.com/starts-fixture/modern');
+    const save = repo.getByRole('button', { name: '收藏 modern 到 WebsiteStars' });
+    await expect(save).toBeVisible({ timeout: 3000 });
+    expect(await save.evaluate(node => node.closest('[data-starts-slot]')?.previousElementSibling?.querySelector('[data-testid="star-button"]') !== null)).toBe(true);
+    await save.click();
+    await expect(save).toHaveText('已收藏到 WebsiteStars');
+    await expect(library.getByRole('button', { name: '查看详情：starts-fixture/modern' })).toBeVisible();
+  } finally { await repo.close(); }
+});
+
 test('stale settings cannot restore removed credentials and Stars buttons deduplicate', async () => {
   const first = await context.newPage();
   const stale = await context.newPage();

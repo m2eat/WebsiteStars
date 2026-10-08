@@ -74,6 +74,8 @@ Load `.output/chrome-mv3` as an unpacked extension using the steps above.
 3. Use **Refresh** to reload local library data; it does not capture the current page or call AI.
 4. Export a JSON backup from **Settings & data** before moving browsers or uninstalling.
 
+On GitHub repository pages (including the newer header layout), **Save to WebsiteStars** appears beside GitHub's **Star** control. Saving to WebsiteStars does not star the repository on GitHub; the two actions are independent.
+
 | Default shortcut | Action |
 | --- | --- |
 | `Alt+Shift+S` | Open the library |

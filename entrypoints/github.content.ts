@@ -12,7 +12,7 @@ function repositoryUrl(value: string): string | undefined {
 }
 
 function starControl(scope: Element, url: string): Element | undefined {
-  return [...scope.querySelectorAll('button, a.btn, a.Button, a[role="button"]')].find(control => {
+  return [...scope.querySelectorAll('button, a.btn, a.Button, a[role="button"], a[data-testid="star-button"]')].find(control => {
     if (control.closest('[data-starts-slot]')) return false;
     const form = control.closest('form');
     if (form) {
@@ -149,13 +149,14 @@ export default defineContentScript({
       } else {
         const url = repositoryUrl(location.href);
         if (!url) return result;
-        document.querySelectorAll('#repository-container-header, [data-testid="repository-header"]').forEach(header => {
-          const name = header.querySelector<HTMLAnchorElement>('[itemprop="name"] a[href]');
+        document.querySelectorAll('.pagehead-actions, [data-testid="repository-actions"], [data-testid="repo-header-actions"]').forEach(actions => {
+          const header = actions.closest('#repository-container-header, [data-testid="repository-header"]');
+          if (!header && !actions.matches('[data-testid="repo-header-actions"]')) return;
+          const name = header?.querySelector<HTMLAnchorElement>('[itemprop="name"] a[href]')
+            ?? document.querySelector<HTMLAnchorElement>('#repo-title-component [itemprop="name"] a[href]');
           if (name && repositoryUrl(name.href)?.toLowerCase() !== url.toLowerCase()) return;
-          header.querySelectorAll('.pagehead-actions, [data-testid="repository-actions"]').forEach(actions => {
-            const control = starControl(actions, url);
-            if (control) result.push({ after: starBoundary(control, actions), url, page: location.pathname });
-          });
+          const control = starControl(actions, url);
+          if (control) result.push({ after: starBoundary(control, actions), url, page: location.pathname });
         });
       }
       return result;

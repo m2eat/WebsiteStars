@@ -74,6 +74,8 @@ npm run build
 3. 「刷新」仅重新读取本地资料，不采集当前页、不调用 AI。
 4. 更换浏览器或卸载之前，在「设置与数据」导出 JSON 备份。
 
+在 GitHub 仓库页（包括新版页面顶部布局），GitHub 的「Star」旁会显示「收藏到 WebsiteStars」。点击 WebsiteStars 按钮不会为仓库添加 GitHub Star，两种收藏互不影响。
+
 | 默认快捷键 | 功能 |
 | --- | --- |
 | `Alt+Shift+S` | 打开资料库 |
